@@ -10,6 +10,50 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        back_to_0 {
+            bindings = <&to 0>;
+            key-positions = <36 41>;
+        };
+
+        back_to_dvorak {
+            bindings = <&to 3>;
+            key-positions = <36 40>;
+        };
+
+        reset {
+            bindings = <&reset>;
+            key-positions = <1 38 5>;
+        };
+
+        bootloader {
+            bindings = <&trans>;
+            key-positions = <7 10 39>;
+        };
+
+        bt1 {
+            bindings = <&bt BT_SEL 0>;
+            key-positions = <36 37 38 1>;
+        };
+
+        bt2 {
+            bindings = <&bt BT_SEL 1>;
+            key-positions = <37 36 38 2>;
+        };
+
+        bt3 {
+            bindings = <&bt BT_SEL 2>;
+            key-positions = <36 37 38 3>;
+        };
+
+        bt4 {
+            bindings = <&bt BT_SEL 3>;
+            key-positions = <4 36 37 38>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -45,28 +89,28 @@
 
         Layer__2 {
             bindings = <
-&trans    &kp TAB  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS         &kp K_BACK    &kp K_FORWARD   &kp BSPC  &trans
-&trans    &kp ESC  &bt BT_SEL 4        &trans        &trans        &trans                     &kp K_PLAY_PAUSE                              &kp K_PREV         &kp K_NEXT       &kp K_STOP    &kp RET  &trans
-&trans  &kp LSHFT        &trans        &trans        &trans        &trans                               &trans                              &kp K_MUTE  &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp RSHFT  &trans
-                                        &to 0      &sk RALT      &sk LGUI                            &sk LCTRL                               &kp SPACE              &to 3
+&none    &kp TAB  &none  &none     &none     &none    &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS         &kp K_BACK    &kp K_FORWARD   &kp BSPC  &none
+&none    &kp ESC  &none  &none     &none     &none                     &kp C_PLAY_PAUSE                              &kp C_PREV         &kp C_NEXT       &kp C_STOP    &kp RET  &none
+&none  &kp LSHFT  &none  &none     &none     &none                                &none                              &kp K_MUTE  &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp RSHFT  &none
+                         &to 0  &sk RALT  &sk LGUI                            &sk LCTRL                               &kp SPACE              &to 0
             >;
         };
 
         Layer__3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                         &none  &trans  &trans    &trans  &trans   &to 4
+&none              &kp SQT  &kp COMMA  &kp DOT      &kp P     &kp Y        &kp F      &kp G  &kp C  &kp R             &kp L  &none
+&none                &kp A      &kp O    &kp E    &lt 1 U     &kp I        &kp D    &lt 1 H  &kp T  &kp N             &kp S  &none
+&none  &mt LEFT_SHIFT SEMI      &kp Q    &kp J      &kp K     &kp X        &kp B      &kp M  &kp W  &kp B  &mt LEFT_SHIFT Z  &none
+                                       &kp ESC  &sk LSHFT  &sk LGUI    &sk LCTRL  &kp SPACE  &to 4
             >;
         };
 
         Layer__4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans   &to 0  &trans
+&trans    &kp TAB  &trans  &trans    &trans    &trans    &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS      &trans  &kp C_AC_BACK  &kp C_AC_FORWARD   &kp BSPC  &trans
+&trans    &kp ESC  &trans  &trans    &trans    &trans                     &kp C_PLAY_PAUSE  &kp C_PREV     &kp C_NEXT        &kp C_STOP    &kp RET  &trans
+&trans  &kp LSHFT  &trans  &trans    &trans    &trans                               &trans  &kp K_MUTE   &kp C_VOL_DN      &kp C_VOL_UP  &kp RSHFT  &trans
+                            &to 3  &kp RALT  &kp LGUI                            &kp LCTRL   &kp SPACE          &to 3
             >;
         };
     };
