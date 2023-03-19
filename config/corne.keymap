@@ -16,41 +16,49 @@
         back_to_0 {
             bindings = <&to 0>;
             key-positions = <36 41>;
+            layers = <2 3 4 1>;
         };
 
         back_to_dvorak {
             bindings = <&to 3>;
             key-positions = <36 40>;
+            layers = <0 4>;
         };
 
         reset {
             bindings = <&reset>;
             key-positions = <1 38 5>;
+            layers = <0 3>;
         };
 
         bootloader {
             bindings = <&trans>;
             key-positions = <7 10 39>;
+            layers = <0 3>;
         };
 
         bt1 {
             bindings = <&bt BT_SEL 0>;
             key-positions = <36 37 38 1>;
+            layers = <0 1 2 4 3>;
         };
 
         bt2 {
             bindings = <&bt BT_SEL 1>;
             key-positions = <37 36 38 2>;
+            layers = <4 3 0 1 2>;
         };
 
         bt3 {
             bindings = <&bt BT_SEL 2>;
             key-positions = <36 37 38 3>;
+            layers = <4 3 0 1 2>;
         };
 
         bt4 {
             bindings = <&bt BT_SEL 3>;
             key-positions = <4 36 37 38>;
+            layers = <3 0 4 1 2>;
         };
     };
 
@@ -89,10 +97,10 @@
 
         Layer__2 {
             bindings = <
-&none    &kp TAB  &none  &none     &none     &none    &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS         &kp K_BACK    &kp K_FORWARD   &kp BSPC  &none
-&none    &kp ESC  &none  &none     &none     &none                     &kp C_PLAY_PAUSE                              &kp C_PREV         &kp C_NEXT       &kp C_STOP    &kp RET  &none
-&none  &kp LSHFT  &none  &none     &none     &none                                &none                              &kp K_MUTE  &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp RSHFT  &none
-                         &to 0  &sk RALT  &sk LGUI                            &sk LCTRL                               &kp SPACE              &to 0
+&none    &kp TAB  &none  &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC    &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS              &none            &none   &kp BSPC  &none
+&none    &kp ESC  &none                     &none                 &none                 &none                     &kp C_PLAY_PAUSE                              &kp C_PREV         &kp C_NEXT            &none    &kp RET  &none
+&none  &kp LSHFT  &none                     &none                 &none                 &none                                &none                              &kp K_MUTE  &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp RSHFT  &none
+                                            &to 0              &sk RALT              &sk LGUI                            &sk LCTRL                               &kp SPACE              &to 0
             >;
         };
 
